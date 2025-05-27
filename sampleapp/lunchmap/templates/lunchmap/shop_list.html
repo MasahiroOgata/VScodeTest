@@ -1,0 +1,9 @@
+{% extends './base.html' %}
+{% block content %}
+    <h1>お店一覧</h1>
+
+    {% for shop in object_list %}
+        <p> {{ shop.category.name }}, {{ shop.name }}</p>
+        <p> {{ shop.comment }}, {{ shop.author }}</p>
+    {% endfor %}
+{% endblock %}
