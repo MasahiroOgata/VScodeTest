@@ -1,0 +1,32 @@
+{% extends './base.html' %}
+{% block content %}
+    <h1>{{ shop.name }}</h1>
+    <table class="table table-striped table-hover">
+    <tr>
+        <th style="width:10%;">カテゴリ</th>
+        <td>{{ shop.category.name }}</td>
+    </tr>
+    <tr>
+        <th>住所</th>
+        <td>{{ shop.address}}</td>
+    </tr>
+    <tr>
+        <th>コメント</th>
+        <td>{{ shop.comment }}</td>
+    </tr>
+    <tr>
+        <th>投稿者</th>
+        <td>{{ shop.author }}</td>
+    </tr>
+
+    <!-- <div>
+        <p> {{ shop.category.name }}</p>
+        <p> {{ shop.address}}</p>
+        <p> {{ shop.comment }}, {{ shop.author }}</p>
+    </div> -->
+    </table>
+    <div>
+        <a href='{% url "lunchmap:index" %}'>一覧</a>
+        <a href='{% url "lunchmap:update" shop.pk %}'>編集</a>
+    </div>
+{% endblock %}
